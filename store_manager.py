@@ -146,18 +146,5 @@ class Manager:
                     manager_shop["block list"].append(chosen_username)
                     with open('ShopList.json', 'w') as training:
                         json.dump(lst, training, indent=1)
-
-            # for row in list(reader):
-            #     if row['username'] == chosen_username:
-            #         print("hello")
-            #         with open('ShopList.json', 'r') as f:
-            #             lst = json.load(f)
-            #             for dic in lst:
-            #                 if chosen_username in dic["block list"]:
-            #                     raise Exception("this user is already blocked!")
-            #                 if dic['username'] != self.username:
-            #                     dic["block list"].append(chosen_username)
-            #                     with open('ShopList.json', 'w') as training:
-            #                         json.dump(lst, training, indent=1)
         return f"{chosen_username}, is added to the block list"
 
