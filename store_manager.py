@@ -136,16 +136,28 @@ class Manager:
     def block_customer(self, chosen_username):  # manager chooses a username and adds it to the block list
         with open('UserInfo.csv', 'r') as user_info:
             reader = csv.DictReader(user_info)
-            for row in list(reader):
-                if row['username'] == chosen_username and row['roll'] != 'customer':
-                    with open('ShopList.json', 'r') as f:
-                        lst = json.load(f)
-                        for dic in lst:
-                            if chosen_username in dic["block list"]:
-                                raise Exception("this user is already blocked!")
-                            if dic['username'] != self.username:
-                                dic["block list"].append(chosen_username)
-                                with open('ShopList.json', 'w') as training:
-                                    json.dump(dic, training, indent=1)
+            users_list = [d['username'] for d in list(reader)]
+            if chosen_username in users_list:
+                with open('ShopList.json', 'r') as f:
+                    lst = json.load(f)
+                    manager_shop = [d for d in lst if d["username"] == self.username][0]
+                    if chosen_username in manager_shop["block list"]:
+                        raise Exception("this user is already blocked!")
+                    manager_shop["block list"].append(chosen_username)
+                    with open('ShopList.json', 'w') as training:
+                        json.dump(lst, training, indent=1)
+
+            # for row in list(reader):
+            #     if row['username'] == chosen_username:
+            #         print("hello")
+            #         with open('ShopList.json', 'r') as f:
+            #             lst = json.load(f)
+            #             for dic in lst:
+            #                 if chosen_username in dic["block list"]:
+            #                     raise Exception("this user is already blocked!")
+            #                 if dic['username'] != self.username:
+            #                     dic["block list"].append(chosen_username)
+            #                     with open('ShopList.json', 'w') as training:
+            #                         json.dump(lst, training, indent=1)
         return f"{chosen_username}, is added to the block list"
 

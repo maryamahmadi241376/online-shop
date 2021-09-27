@@ -168,7 +168,10 @@ try:
                                         print(a)
                                     else:
                                         logging.warning("No such option available")
-                                        raise Exception("No such option available")
+                                        a = adminLoginWindow()
+                                        print(a)
+                                        raise Exception("No such option available,please choose a valid option")
+
                             else:
                                 logging.error("log in unsuccessful!")
                                 raise Exception("log in unsuccessful!")
