@@ -1,0 +1,42 @@
+[
+ {
+  "username": "09122642880",
+  "product list": [
+   {
+    "barcode": "1",
+    "price": 10000,
+    "brand": "dell",
+    "product name": "dell laptop",
+    "available": "33"
+   }
+  ],
+  "shop name": "hyper",
+  "start work period": 9,
+  "end work period": 16,
+  "block list": []
+ },
+ {
+  "username": "09199003693",
+  "product list": [],
+  "shop name": "iu",
+  "start work period": 8,
+  "end work period": 14,
+  "block list": []
+ },
+ {
+  "username": "09910607452",
+  "product list": [],
+  "shop name": "kooki",
+  "start work period": 9,
+  "end work period": 15,
+  "block list": []
+ },
+ {
+  "username": "09125613828",
+  "product list": [],
+  "shop name": "ami",
+  "start work period": 13,
+  "end work period": 21,
+  "block list": []
+ }
+]
