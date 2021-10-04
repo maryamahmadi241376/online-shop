@@ -1,44 +1,72 @@
 [
- {
-  "username": "09122642880",
-  "product list": [
-   {
-    "barcode": "1",
-    "price": 10000,
-    "brand": "dell",
-    "product name": "dell laptop",
-    "available": "33"
-   }
-  ],
-  "shop name": "hyper",
-  "start work period": 9,
-  "end work period": 16,
-  "block list": [
-   "09010609876"
-  ]
- },
- {
-  "username": "09199003693",
-  "product list": [],
-  "shop name": "iu",
-  "start work period": 8,
-  "end work period": 14,
-  "block list": []
- },
- {
-  "username": "09910607452",
-  "product list": [],
-  "shop name": "kooki",
-  "start work period": 9,
-  "end work period": 15,
-  "block list": []
- },
- {
-  "username": "09125613828",
-  "product list": [],
-  "shop name": "ami",
-  "start work period": 13,
-  "end work period": 21,
-  "block list": []
- }
+  {
+    "username": "09124647875",
+    "product list": [
+      {
+        "available": "13",
+        "barcode": "1",
+        "brand": "dell",
+        "price": 10000,
+        "product name": "dell laptop"
+      }
+    ],
+    "shop name": "ok",
+    "start work period": "00:00:00",
+    "end work period": "08:00:00",
+    "block list": [
+      "09179876543"
+    ]
+  },
+  {
+    "username": "09199003693",
+    "product list": [
+      {
+        "available": "50",
+        "barcode": "2",
+        "brand": "hp",
+        "price": 30000,
+        "product name": "hp laptop"
+      }
+    ],
+    "shop name": "iu",
+    "start work period": "00:00:00",
+    "end work period": "06:00:00",
+    "block list": []
+  },
+  {
+    "username": "09122642880",
+    "product list": [
+      {
+        "available": "100",
+        "barcode": "3",
+        "brand": "lenovo",
+        "price": 36000,
+        "product name": "lenovo laptop"
+      }
+    ],
+    "shop name": "kook",
+    "start work period": "09:16:00",
+    "end work period": "16:30:00",
+    "block list": [
+      "09125678765"
+    ]
+  },
+  {
+    "username": "09910607452",
+    "product list": [
+      {
+        "available": "40",
+        "barcode": "4",
+        "brand": "apple",
+        "price": 500000,
+        "product name": "apple laptop"
+      }
+    ],
+    "shop name": "bts",
+    "start work period": "10:00:00",
+    "end work period": "18:00:00",
+    "block list": [
+      "09357685984"
+    ]
+  }
 ]

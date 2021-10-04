@@ -1,6 +1,7 @@
 import csv
 import logging
 import json
+from person import Person
 
 name = "Manager"
 logger = logging.getLogger("Manager related")
@@ -10,29 +11,20 @@ logging.basicConfig(level=logging.DEBUG,
                     datefmt='%d-%b-%y %H:%M:%S')
 
 
-class Manager:
-    def __init__(self, user, name_shop, start_work, end_work):
-        self.username = user
+class Manager(Person):
+    def __init__(self, username, password, name_shop=None, start_work=None, end_work=None):
+        super().__init__(username, password)
+        self.password = password
+        self.username = username
         self.shop_name = name_shop
         self.start_work = start_work
         self.end_work = end_work
 
     @classmethod
-    def enter_manager(cls, user, name_shop, start_work, end_work):
-        return cls(user, name_shop, start_work, end_work)
+    def enter_manager(cls, user, password, *args):
+        return cls(user, user, password, *args)
 
     shopping = []
-
-    # shopping = [{"barcode": 1001, "brand": "HP-AE12", "available": 100, "price": 25000, "product name": "HP
-    # laptop"}, {"barcode": 1002, "brand": "DELL", "available": 100, "price": 35000, "product name": "Dell laptop"},
-    # {"barcode": 1003, "brand": "ASUS", "available": 100, "price": 28000, "product name": "Asus laptop"},
-    # {"barcode": 1004, "brand": "APPLE", "available": 100, "price": 60000, "product name": "Apple laptop"},
-    # {"barcode": 1005, "brand": "ACER", "available": 100, "price": 24000, "product name": "Acer laptop"},
-    # {"barcode": 1006, "brand": "SAMSUNG", "available": 100, "price": 35000, "product name": "Samsung laptop"},
-    # {"barcode": 1007, "brand": "OPPO", "available": 100, "price": 15000, "product name": "Oppo laptop"},
-    # {"barcode": 1008, "brand": "XAOMI", "available": 100, "price": 45000, "product name": "Xaomi laptop"},
-    # {"barcode": 1009, "brand": "HUAWEI", "available": 100, "price": 20000, "product name": "Huawei laptop"},
-    # {"barcode": 1010, "brand": "VIVO", "available": 100, "price": 12000, "product name": "Vivo laptop"}]
 
     def add_product(self):  # manager adds products
         try:
@@ -92,24 +84,6 @@ class Manager:
 
     @staticmethod
     def customer_invoice():  # manager can see his customers invoices from the related file
-        with open('CustomerInvoice.json', 'r+') as fp:
-            try:
-                data = json.load(fp)
-            except:
-                data = []
-            if not isinstance(data, list):
-                data = []
-
-            data.append(
-                {
-                    'username': "username",
-                    'purchase list': [],
-                    'shop name': "shop_name",
-                    'total price': []
-                }
-            )
-            with open('CustomerInvoice.json', 'w+') as fp:
-                json.dump(data, fp, indent=2)
         with open('CustomerInvoice.json', 'r') as invoice:
             lst = json.load(invoice)
             for row in lst:
@@ -147,4 +121,3 @@ class Manager:
                     with open('ShopList.json', 'w') as training:
                         json.dump(lst, training, indent=1)
         return f"{chosen_username}, is added to the block list"
-
