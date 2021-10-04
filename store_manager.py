@@ -84,8 +84,9 @@ class Manager(Person):
 
     @staticmethod
     def customer_invoice():  # manager can see his customers invoices from the related file
-        with open('CustomerInvoice.json', 'r') as invoice:
-            lst = json.load(invoice)
+        with open('CustomerInvoice.csv', 'r') as invoice:
+            reader = csv.DictReader(invoice)
+            lst = list(reader)
             for row in lst:
                 if len(lst) > 0:
                     return f"customers invoices :\n {row}"

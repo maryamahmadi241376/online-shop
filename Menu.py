@@ -146,7 +146,7 @@ try:
                             print(store_manager.warning())
                         elif choice == 3:
                             print(store_manager.warning())
-                        elif choice == 4:  # this option is not available at this moment
+                        elif choice == 4:
                             print(store_manager.customer_invoice())
                         elif choice == 5:
                             print(store_manager.customer_info())
