@@ -202,7 +202,8 @@ try:
                                 if choose == 1:
                                     print(buy.choose_products())
                                     buy_customer = Purchase(user, user_selection)
-                                    print(buy_customer.choose_products())
+                                    args = [x for x in input("Enter products and separate them with comma, please: \n").split(', ')]
+                                    print(buy_customer.choose_products(args[0]))
                                     print(buy_customer.invoices(Purchase.purchase_list))
                                 elif choose == 2:
                                     product = input("enter the name of product you wanna search: ")
